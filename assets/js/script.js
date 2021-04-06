@@ -11,6 +11,12 @@ searchForm.addEventListener("submit", function (event) {
         })
         .then(function (data) {
             console.log(data);
+
+            var resultContent = document.getElementById("food-root");
+            resultContent.innerHTML = "";
+            var dataOptions = document.createElement("p");
+            dataOptions.textContent = data[0].title
+            resultContent.append(dataOptions);
             var dataId = data[0].id
             var urlToFetch2 = `https://api.spoonacular.com/recipes/${dataId}/information?includeNutrition=false&apiKey=14d9da1ef7ea4d14af97948a6903f533`
             fetch(urlToFetch2)
@@ -23,7 +29,7 @@ searchForm.addEventListener("submit", function (event) {
                     console.log(data.instructions)
                     var resultsContent = document.getElementById
                         ('food-root');
-                        resultsContent.innerHTML = ""
+                    resultsContent.innerHTML = ""
                     var recipeTitlep = document.createElement("p");
                     recipeTitlep.textContent = "Recipe: " + data.title;
                     resultsContent.append(recipeTitlep)
