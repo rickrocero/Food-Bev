@@ -20,12 +20,19 @@
 .hide {
     display: none;
 }
-
-.ingredient-container {
-    padding-inline-end: 60px;
+.textContent {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: left;
+     
 }
+.b {
+    text-shadow: 2px 2px 5px red;
+    font-size: 30px;
 
-.ingredient-measure-container {
-    display: flex;
 }
-
+.brand-logo{
+    text-shadow: 2px 2px 5px red;
+}
