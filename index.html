@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food and Bev</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- linking jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Protein</a></li>
+            <li><a href="#!">Veggie</a></li>
+            <li><a href="#!">Starch</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Food & Bev!</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="coktails.html">Cocktails</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Ingredients<i
+                                class="fas fa-arrow-circle-down"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+
+            <img class="fit-picture col s6"
+                src="https://www.electricireland.ie/images/default-album/fridge-gazing-featured541eda7971b26d2c9ef6ff00003c2f58.jpg?sfvrsn=c5acb70d_0"
+                alt="Confused Chef">
+
+            <div class="textContent fit picture col s6">
+
+                <p1>
+                    <div class="a">
+                        Do you ever feel uninspired when looking into your fridge? Not anymore! We've got the page for
+                        you. 
+                        <br>
+                        <br>
+
+                        Enter a few items from your inventory, press enter and options appear. Pick an option and
+                        the recipe shows you what to do.
+                        <br>
+                        <br>
+                        The same goes for all the boring cocktails you've been throwing
+                        together lately.
+                        <br>
+                        <br>
+                        Go from uninspired to brilliant with:
+                    </div>
+                    <br>
+
+                    <div class="b">
+                        "Food & Bev!"
+                    </div>
+                </p1>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <form id="search-form" class="input-field col s6">
+                <input id="foodIngredient" placeholder="Food Ingredient" type="search" class="validate">
+                <button id="search-button" class="btn waves-effect waves-light" type="submit" name="search">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+
+
+            <form id="bev-search-form" class="input-field col s6">
+                <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate">
+                <button id="bev-search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+
+
+        <main class="recipeDashboard col-9">
+
+            <div class="row">
+                <section id="Recipes" class="card m-5 col-12">
+                    <!-- recipe data-->
+                    <div class="card-body">
+
+                        <div id="food-root"></div>
+
+                    </div>
+                </section>
+
+                <section id="Cocktails" class="card m-5 col-12">
+                    <!-- bev data-->
+                    <div id="" class="card-body">
+                        <div id="bev-root"></div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+        <div class="modal-container hide">
+            <!-- modal goes here -->
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cocktailscript.js"></script>
+</body>
+
+</html>
