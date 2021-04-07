@@ -21,3 +21,19 @@
 .hide {
     display: none;
 }
+.textContent {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: left;
+     
+}
+.b {
+    text-shadow: 2px 2px 5px red;
+    font-size: 30px;
+
+}
+.brand-logo{
+    text-shadow: 2px 2px 5px red;
+}
