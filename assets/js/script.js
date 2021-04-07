@@ -2,7 +2,7 @@ var resultContent = document.getElementById('food-root');
 var searchForm = document.querySelector("#search-form");
 var ingredientsTermInput = document.querySelector("#foodIngredient");
 $(".dropdown-trigger").dropdown({ hover: false });
-var modalEl = document.querySelector(".modal-container");
+var modalEl = document.querySelector(".modal-container-2");
 
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -28,11 +28,10 @@ searchForm.addEventListener("submit", function (event) {
 
                 var title = data[i].title;
                 var titleValue = title.value;
-                console.log(titleValue);
 
                 var linkAnchor = document.createElement("a");
                 var linkButton = document.createElement("button");
-                linkButton.classList.add("recipe-button");
+                linkButton.classList.add("food-recipe-button");
                 linkButton.setAttribute("data", titleValue);
                 linkButton.textContent = "Get Recipe";
                 linkAnchor.append(linkButton);
@@ -42,7 +41,7 @@ searchForm.addEventListener("submit", function (event) {
 });
 
 document.querySelector("#food-root").addEventListener("click", (event) => {
-    if (event.target.className.indexOf("recipe-button") > -1) {
+    if (event.target.className.indexOf("food-recipe-button") > -1) {
         generateRecipe(event.target.getAttribute("data"));
         modalEl.classList.remove("hide");
     }
@@ -50,7 +49,7 @@ document.querySelector("#food-root").addEventListener("click", (event) => {
 
 
 
-const generateRecipe = (recipe) => {
+const createRecipe = (recipe) => {
     var urlToFetch2 =`https://api.spoonacular.com/recipes/complexSearch?query=titleMatch=${recipe}&apiKey=14d9da1ef7ea4d14af97948a6903f533`;
     fetch(urlToFetch2)
         .then(function (response) {
