@@ -5,6 +5,7 @@ var bevDivEl = document.querySelector("#bev-root");
 var bevIngred = bevIngredInput.value;
 var modalEl = document.querySelector(".modal-container");
 
+
 bevSearchForm.addEventListener("submit", function (event) {
   event.preventDefault();
   var bevIngred = bevIngredInput.value;
@@ -86,20 +87,28 @@ const generateRecipe = (recipe) => {
             <div class="card">
                 <div class="card-body">
                     <button class="close">close</button>
-                    <div class="ingredient-container">
-                        <ul>${renderRecipeData(ingredient, "ingredient")}</ul>
+                    <div class="ingredient-measure-container"> 
+                      <div class="ingredient-container">
+                          <ul>${renderRecipeData(ingredient, "ingredient")}</ul>
+                      </div>
+                      <div class="measure-container">
+                          <ul>${renderRecipeData(measure, "measure")}</ul>
+                      </div>
                     </div>
                     <div class="instruction-container">
                         <ul>${renderRecipeData(instruction, "instruction")}</ul>
-                    </div>
-                    <div class="measure-container">
-                        <ul>${renderRecipeData(measure, "measure")}</ul>
                     </div>
                 </div>
             </div>
         `;
 
       document.querySelector(".modal-container").innerHTML = cardTemplate;
+
+      document.querySelector(".close").addEventListener("click", function() {
+        console.log("close btn clicked");
+        modalEl.classList.add("hide");
+      })
+
     });
 };
 
@@ -112,6 +121,10 @@ const renderRecipeData = (array, type) => {
 
   return result;
 };
+
+
+
+
 // url to input drink ID to get full cocktail details
 // var urlToFetch2 = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`;
 // fetch(urlToFetch2)
