@@ -23,48 +23,52 @@
             <li><a href="#!">Protein</a></li>
             <li><a href="#!">Veggie</a></li>
             <li><a href="#!">Starch</a></li>
-          </ul>
-          <nav>
+        </ul>
+        <nav>
             <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">Food & Bev!</a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="coktails.html">Cocktails</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Ingrediets<i class="material-icons right">arrow_drop_down</i></a></li>
-              </ul>
+                <a href="#!" class="brand-logo">Food & Bev!</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="coktails.html">Cocktails</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Ingrediets<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
             </div>
-          </nav>
+        </nav>
         <div class="row">
-            
+
             <img class="fit-picture"
-            src="https://www.electricireland.ie/images/default-album/fridge-gazing-featured541eda7971b26d2c9ef6ff00003c2f58.jpg?sfvrsn=c5acb70d_0"
-            alt="Confused Chef">
+                src="https://www.electricireland.ie/images/default-album/fridge-gazing-featured541eda7971b26d2c9ef6ff00003c2f58.jpg?sfvrsn=c5acb70d_0"
+                alt="Confused Chef">
 
             <div class="textContent col s4">
                 <h5>
                     <p>
-                        Do you ever feel uninspired when looking into your fridge?  Not anymore!  We've got the page for you.  Enter a few items from your inventory, press enter and options appear.  Pick an option and the recipe shows you what to do.  The same goes for all the boring cocktails you've been throwing together lately.  Go from uninspired to brilliant with "Food & Bev!"
+                        Do you ever feel uninspired when looking into your fridge? Not anymore! We've got the page for
+                        you. Enter a few items from your inventory, press enter and options appear. Pick an option and
+                        the recipe shows you what to do. The same goes for all the boring cocktails you've been throwing
+                        together lately. Go from uninspired to brilliant with "Food & Bev!"
                     </p>
                 </h5>
 
-            </div>    
+            </div>
 
             <form id="search-form" class="input-field col s6">
                 <input id="foodIngredient" placeholder="Food Ingredient" type="search" class="validate">
                 <button id="search-button" class="btn waves-effect waves-light" type="submit" name="search">Submit
                     <i class="material-icons right">send</i>
                 </button>
-                
+
             </form>
-        
+
             <div class="input-field col s6">
                 <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
-            
+
         </div>
         <main class="recipeDashboard col-9">
 
@@ -72,9 +76,9 @@
                 <section id="Recipes" class="card m-5 col-12">
                     <!-- recipe data-->
                     <div class="card-body">
-                        
-                            <div id="food-root"></div>
-                      
+
+                        <div id="food-root"></div>
+
                     </div>
                 </section>
             </div>
@@ -83,15 +87,18 @@
                 <section id="Cocktails" class="card m-5 col-12">
                     <!-- bev data-->
                     <div class="card-body">
-                        
-                            <div id="bev-root"></div>
-                      
+
+                        <div id="bev-root"></div>
+
                     </div>
                 </section>
             </div>
 
 
         </main>
+        <div id="new-search" class="modal-container hide">
+
+        </div>
     </div>
 
 
