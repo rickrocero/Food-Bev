@@ -1,7 +1,7 @@
 var resultContent = document.getElementById('food-root');
 var searchForm = document.querySelector("#search-form");
 var ingredientsTermInput = document.querySelector("#foodIngredient");
-$(".dropdown-trigger").dropdown({ hover: false });
+//$(".dropdown-trigger").dropdown({ hover: false });
 var modalEl = document.querySelector(".modal-container-2");
 
 searchForm.addEventListener("submit", function (event) {
@@ -42,7 +42,7 @@ searchForm.addEventListener("submit", function (event) {
 
 document.querySelector("#food-root").addEventListener("click", (event) => {
     if (event.target.className.indexOf("food-recipe-button") > -1) {
-        generateRecipe(event.target.getAttribute("data"));
+        createRecipe(event.target.getAttribute("data"));
         modalEl.classList.remove("hide");
     }
 });
