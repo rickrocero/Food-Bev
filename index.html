@@ -60,7 +60,7 @@
         
             <div class="input-field col s6">
                 <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button id="bev-search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -82,16 +82,16 @@
             <div class="row">
                 <section id="Cocktails" class="card m-5 col-12">
                     <!-- bev data-->
-                    <div class="card-body">
-                        
-                            <div id="bev-root"></div>
-                      
+                    <div id="" class="card-body">
+                        <div id="bev-root"></div>
                     </div>
                 </section>
             </div>
 
-
         </main>
+        <div class="modal-container hide">
+            <!-- modal goes here -->
+        </div>
     </div>
 
 
@@ -99,6 +99,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cocktailscript.js"></script>
 </body>
 
 </html>
