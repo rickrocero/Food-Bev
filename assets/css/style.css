@@ -91,6 +91,7 @@ body {
 #bev-search-btn {
     background-color: rgb(98, 240, 129);
     color: black;
+    bottom: 39px;
 }
 
 .ingredient-measure-container {
@@ -110,3 +111,8 @@ body {
     color: white;
     transition: ease-in-out ;
 }
+
+#bevIngredient {
+    display: block;
+}
+
