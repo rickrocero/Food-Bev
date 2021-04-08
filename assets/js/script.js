@@ -7,7 +7,7 @@ var modalEl = document.querySelector(".modal-container-2");
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
     var searchTerm = ingredientsTermInput.value;
-    var urlToFetch = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchTerm}&number=5&apiKey=14d9da1ef7ea4d14af97948a6903f533`
+    var urlToFetch = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchTerm}&number=8&apiKey=14d9da1ef7ea4d14af97948a6903f533`
     fetch(urlToFetch)
         .then(function (response) {
             return response.json();
@@ -54,88 +54,59 @@ const createRecipe = (recipe) => {
             return response.json();
         })
         .then(function (res) {
-            console.log(res);
+            //console.log(res);
 
             const results = res
-           
-            var extendedIngredients = results.extendedIngredients[0];
-            console.log(extendedIngredients);
-            var summary = results.summary; 
-            var summaryValue =((summary.toString())) + " ";
-            var instruction = results.instructions;
-            var ingredients = results.analyzedInstructions[0].steps[0].ingredients;
+            var title = results.title;
+            var extendedIngredients = results.extendedIngredients;
+            //var instructions = results.analyzedInstructions[0].steps[0].ingredients;
             var url = results.sourceUrl;
-            console.log(url);
             var steps = results.analyzedInstructions[0].steps;
-          
-            for (let i = 0; i < ingredients.length; i++) {
-                var allIngredients = ingredients[i].name;
-                console.log(allIngredients);   
+            //console.log(title);
+            var allExtendedIngredients = []
+            var allSteps = []
+            for (let i = 0; i < extendedIngredients.length; i++) {
+                allExtendedIngredients.push(extendedIngredients[i].original);
+                //console.log(allExtendedIngredients);
             }
-
             for (let i = 0; i < steps.length; i++) {
-                const allSteps = steps[i].step;
-                console.log(allSteps);
-                var finalSteps = document.createElement("p")
-                finalSteps.textContent = "Instructions: " + allSteps;
-                resultContent.append(finalSteps);
+                allSteps.push(steps[i].step);
+                //console.log(allSteps);
             }
-                
-            //var moreIngredients = data.analyzedInstructions[0].steps[1].ingredients;
-            // 
-           
-            //     console.log(allIngredients); 
-            //     console.log(allIngredients);
-            //     console.log(allMoreIngredients);
-            //   
+            //console.log(url);
+            const cardFoodTemplate = `
+                  <div class="card">
+                      <div class="card-content">
+                      <span class="card-title">${title}</span>
+                          <div class="ingredient-container">
+                              <ul>${renderFoodRecipeData(allExtendedIngredients, "ingredientList")}</ul>
+                          </div>
+                          <div class="instruction-container">
+                              <ul>${renderFoodRecipeData(allSteps, "instruction")}</ul>
+                          </div>
+                          <div class="card-action">
+                            <a href=${url}>Recipe Link</a>
+                            </div>
+                          <button class="closes">close</button>
+                      </div>
+                  </div>
+              `;
 
-            //         const ingredient = [];
-            //         const instruction = [];
-            //         const measure = [];
+            document.querySelector(".modal-container-2").innerHTML = cardFoodTemplate;
 
-            //         for (const key in data) {
-            //           if (key.indexOf("strIngredient") > -1 && data[key]) {
-            //             ingredient.push(data[key]);
-            //           }
-            //           if (key === "strInstructions" && data[key]) {
-            //             instruction.push(data[key]);
-            //           }
-            //           if (key.indexOf("strMeasure") > -1 && data[key]) {
-            //             measure.push(data[key]);
-            //           }
-            //         }
-
-            //         console.log("******ingredient", ingredient);
-            //         console.log("******instruction", instruction);
-            //         console.log("******measure", measure);
-
-            // const cardTemplate = `
-            //       <div class="card">
-            //           <div class="card-body">
-            //               <button class="close">close</button>
-            //               <div class="ingredient-container">
-            //                   <ul>${renderRecipeData(summary, "summary")}</ul>
-            //               </div>
-            //               <div class="instruction-container">
-            //                   <ul>${renderRecipeData(instruction, "instruction")}</ul>
-            //               </div>
-            //               <div class="measure-container">
-            //                   <ul>${renderRecipeData(allIngredients, "all ingredients")}</ul>
-            //               </div>
-            //           </div>
-            //       </div>
-            //   `;
-
-            // document.querySelector(".modal-container").innerHTML = cardTemplate;
+            document.querySelector(".closes").addEventListener("click", function() {
+                console.log("close btn clicked");
+                modalEl.classList.add("hide");
+            });
         });
 };
 
-// const renderRecipeData = (array, type) => {
-//     let result = "";
+const renderFoodRecipeData = (array, type) => {
+    let result = "";
 
-//     array.forEach((item) => {
-//       result += `<li class="${type}">${item}<li>`;
-//     });
+    array.forEach((item) => {
+        result += `<li class="${type}">${item}<li>`;
+    });
 
-//     return result;
-//   };
+    return result;
+};
