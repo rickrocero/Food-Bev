@@ -7,7 +7,7 @@ var modalEl = document.querySelector(".modal-container-2");
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
     var searchTerm = ingredientsTermInput.value;
-    var urlToFetch = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchTerm}&number=5&apiKey=14d9da1ef7ea4d14af97948a6903f533`
+    var urlToFetch = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchTerm}&number=8&apiKey=14d9da1ef7ea4d14af97948a6903f533`
     fetch(urlToFetch)
         .then(function (response) {
             return response.json();
@@ -32,7 +32,7 @@ searchForm.addEventListener("submit", function (event) {
                 var linkAnchor = document.createElement("a");
                 var linkButton = document.createElement("button");
                 linkButton.classList.add("food-recipe-button");
-                linkButton.setAttribute("data", titleValue);
+                linkButton.setAttribute("data", data[i].id);
                 linkButton.textContent = "Get Recipe";
                 linkAnchor.append(linkButton);
                 resultContent.append(linkAnchor);
@@ -47,86 +47,66 @@ document.querySelector("#food-root").addEventListener("click", (event) => {
     }
 });
 
-
-
 const createRecipe = (recipe) => {
-    var urlToFetch2 =`https://api.spoonacular.com/recipes/complexSearch?query=titleMatch=${recipe}&apiKey=14d9da1ef7ea4d14af97948a6903f533`;
+    var urlToFetch2 = `https://api.spoonacular.com/recipes/${recipe}/information?&apiKey=14d9da1ef7ea4d14af97948a6903f533`;
     fetch(urlToFetch2)
         .then(function (response) {
             return response.json();
         })
         .then(function (res) {
-            console.log(res);
+            //console.log(res);
 
-            const data = res
+            const results = res
+            var title = results.title;
+            var extendedIngredients = results.extendedIngredients;
+            //var instructions = results.analyzedInstructions[0].steps[0].ingredients;
+            var url = results.sourceUrl;
+            var steps = results.analyzedInstructions[0].steps;
+            //console.log(title);
+            var allExtendedIngredients = []
+            var allSteps = []
+            for (let i = 0; i < extendedIngredients.length; i++) {
+                allExtendedIngredients.push(extendedIngredients[i].original);
+                //console.log(allExtendedIngredients);
+            }
+            for (let i = 0; i < steps.length; i++) {
+                allSteps.push(steps[i].step);
+                //console.log(allSteps);
+            }
+            //console.log(url);
+            const cardFoodTemplate = `
+                  <div class="card">
+                      <div class="card-content">
+                      <span class="card-title">${title}</span>
+                          <div class="ingredient-container">
+                              <ul>${renderFoodRecipeData(allExtendedIngredients, "ingredientList")}</ul>
+                          </div>
+                          <div class="instruction-container">
+                              <ul>${renderFoodRecipeData(allSteps, "instruction")}</ul>
+                          </div>
+                          <div class="card-action">
+                            <a href=${url}>Recipe Link</a>
+                            </div>
+                          <button class="closes">close</button>
+                      </div>
+                  </div>
+              `;
 
-            // var summary = data.summary;
-            // var ingredients = data.analyzedInstructions[0].steps[0].ingredients;
-            // var moreIngredients = data.analyzedInstructions[0].steps[1].ingredients;
-            // var instruction = data.instructions;
-            // var url = data.sourceUrl;
+            document.querySelector(".modal-container-2").innerHTML = cardFoodTemplate;
 
-            // for (let i = 0; i < ingredients.length; i++) {
-            //     var allIngredients = ingredients[i].name;
-                
-            // }
-            //     console.log(summary);
-            //     console.log(allIngredients);
-            //     console.log(instruction);
-            //     console.log(allIngredients);
-            //     console.log(allMoreIngredients);
-            //     var newSearch = document.getElementById("new-search")
-                // var newSummary = document.createElement("p")
-                // newSummary.textContent = summary;
-                // newSearch.append(newSummary);
-
-            //         const ingredient = [];
-            //         const instruction = [];
-            //         const measure = [];
-
-            //         for (const key in data) {
-            //           if (key.indexOf("strIngredient") > -1 && data[key]) {
-            //             ingredient.push(data[key]);
-            //           }
-            //           if (key === "strInstructions" && data[key]) {
-            //             instruction.push(data[key]);
-            //           }
-            //           if (key.indexOf("strMeasure") > -1 && data[key]) {
-            //             measure.push(data[key]);
-            //           }
-            //         }
-
-            //         console.log("******ingredient", ingredient);
-            //         console.log("******instruction", instruction);
-            //         console.log("******measure", measure);
-
-                    // const cardTemplate = `
-                    //       <div class="card">
-                    //           <div class="card-body">
-                    //               <button class="close">close</button>
-                    //               <div class="ingredient-container">
-                    //                   <ul>${renderRecipeData(summary, "summary")}</ul>
-                    //               </div>
-                    //               <div class="instruction-container">
-                    //                   <ul>${renderRecipeData(instruction, "instruction")}</ul>
-                    //               </div>
-                    //               <div class="measure-container">
-                    //                   <ul>${renderRecipeData(allIngredients, "all ingredients")}</ul>
-                    //               </div>
-                    //           </div>
-                    //       </div>
-                    //   `;
-
-                    // document.querySelector(".modal-container").innerHTML = cardTemplate;
+            document.querySelector(".closes").addEventListener("click", function() {
+                console.log("close btn clicked");
+                modalEl.classList.add("hide");
+            });
         });
 };
 
-// const renderRecipeData = (array, type) => {
-//     let result = "";
-  
-//     array.forEach((item) => {
-//       result += `<li class="${type}">${item}<li>`;
-//     });
-  
-//     return result;
-//   };
+const renderFoodRecipeData = (array, type) => {
+    let result = "";
+
+    array.forEach((item) => {
+        result += `<li class="${type}">${item}<li>`;
+    });
+
+    return result;
+};
