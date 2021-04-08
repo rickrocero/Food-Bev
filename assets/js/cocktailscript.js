@@ -4,6 +4,7 @@ var bevSearchBtn = document.querySelector("#bev-search-btn");
 var bevDivEl = document.querySelector("#bev-root");
 var bevIngred = bevIngredInput.value;
 var modalEl = document.querySelector(".modal-container");
+var bodyEl = document.querySelector("body");
 
 
 bevSearchForm.addEventListener("submit", function (event) {
@@ -85,9 +86,10 @@ const generateRecipe = (recipe) => {
 
       const cardTemplate = `
             <div class="card">
-                <div class="card-body">
-                    <button class="close">close</button>
-                    <div class="ingredient-measure-container"> 
+                <div class="card-content">
+                    <button class="close" style="position: absolute; top: 0; right: 0; border-radius: 20px;" >close</button>
+                    <h6><strong>Ingredients</strong></h6>
+                    <div class="ingredient-measure-container">
                       <div class="ingredient-container">
                           <ul>${renderRecipeData(ingredient, "ingredient")}</ul>
                       </div>
@@ -95,6 +97,7 @@ const generateRecipe = (recipe) => {
                           <ul>${renderRecipeData(measure, "measure")}</ul>
                       </div>
                     </div>
+                    <h6><strong>Instructions</strong></h6>
                     <div class="instruction-container">
                         <ul>${renderRecipeData(instruction, "instruction")}</ul>
                     </div>

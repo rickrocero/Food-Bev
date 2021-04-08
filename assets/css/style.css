@@ -15,6 +15,7 @@
 .modal-container .card {
     margin: 30vh auto auto auto;
     width: fit-content;
+    border-radius: 20px;
 }
 
 .hide {
@@ -35,4 +36,22 @@
 }
 .brand-logo{
     text-shadow: 2px 2px 5px red;
+}
+
+.ingredient-measure-container {
+    display: flex;
+}
+
+.ingredient-container {
+    padding-inline-end: 15px;
+}
+
+/* .cocktail-card-body {
+    padding: 20px;
+} */
+
+.close:hover {
+    background-color: #cc0000;
+    color: white;
+    transition: ease-in-out ;
 }
