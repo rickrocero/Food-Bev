@@ -29,6 +29,7 @@ html {
 body {
        /* The image used */
     background-image: url("../images/cliomakeup-apericena-apericena-1 (2).jpg");
+    
   
     /* Full height */
     height: 100%;
@@ -42,6 +43,7 @@ body {
 .nav-wrapper{
     background: rgba(255, 228, 196, 1);
     text-align: center;
+    border-radius: 20px;
     
 
 }
@@ -55,6 +57,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     text-align: left;
+    border-radius: 20px;
     
 }
 .a {
@@ -62,6 +65,7 @@ body {
     font-style: italic;
     font-weight: bold;
     background: rgba(255, 228, 196, .5);
+    border-radius: 20px;
     /* background-color: bisque; */
     /* opacity: 50%;      */
 
@@ -69,8 +73,10 @@ body {
 .b {
     text-shadow: 2px 2px 5px red;
     font-size: 40px;
-    background-color: rgb(233, 216, 196);
-    opacity: 50%;     
+    border-radius: 20px;
+    background: rgba(255, 228, 196, .5);
+    /* background-color: rgb(233, 216, 196);
+    opacity: 50%;      */
 
 }
 .brand-logo{
