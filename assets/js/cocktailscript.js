@@ -17,6 +17,7 @@ bevSearchForm.addEventListener("submit", function (event) {
       return response.json();
     })
     .then(function (data) {
+      bevDivEl.innerHTML = "";
       // console.log(data.drinks[0]);
       // console.log(data.drinks[0].idDrink);
       // loop through data then append cocktail name and img to page
