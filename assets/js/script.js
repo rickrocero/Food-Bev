@@ -2,7 +2,7 @@ var resultContent = document.getElementById('food-root');
 var searchForm = document.querySelector("#search-form");
 var ingredientsTermInput = document.querySelector("#foodIngredient");
 //$(".dropdown-trigger").dropdown({ hover: false });
-var modalEl = document.querySelector(".modal-container-2");
+var modalFoodEl = document.querySelector(".modal-container-2");
 
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -42,19 +42,19 @@ searchForm.addEventListener("submit", function (event) {
 
 document.querySelector("#food-root").addEventListener("click", (event) => {
     if (event.target.className.indexOf("food-recipe-button") > -1) {
-        createRecipe(event.target.getAttribute("data"));
-        modalEl.classList.remove("hide");
+        createFoodRecipe(event.target.getAttribute("data"));
+        modalFoodEl.classList.remove("hide");
     }
 });
 
-const createRecipe = (recipe) => {
+const createFoodRecipe = (recipe) => {
     var urlToFetch2 = `https://api.spoonacular.com/recipes/${recipe}/information?&apiKey=14d9da1ef7ea4d14af97948a6903f533`;
     fetch(urlToFetch2)
         .then(function (response) {
             return response.json();
         })
         .then(function (res) {
-            //console.log(res);
+            console.log(res);
 
             const results = res
             var title = results.title;
@@ -62,18 +62,18 @@ const createRecipe = (recipe) => {
             //var instructions = results.analyzedInstructions[0].steps[0].ingredients;
             var url = results.sourceUrl;
             var steps = results.analyzedInstructions[0].steps;
-            //console.log(title);
+            console.log(title);
             var allExtendedIngredients = []
             var allSteps = []
             for (let i = 0; i < extendedIngredients.length; i++) {
                 allExtendedIngredients.push(extendedIngredients[i].original);
-                //console.log(allExtendedIngredients);
+                //console.log(allExtendedIngredients[i]);
             }
             for (let i = 0; i < steps.length; i++) {
                 allSteps.push(steps[i].step);
-                //console.log(allSteps);
+                console.log(allSteps);
             }
-            //console.log(url);
+            console.log(url);
             const cardFoodTemplate = `
                   <div class="card">
                       <div class="card-content">
@@ -96,7 +96,7 @@ const createRecipe = (recipe) => {
 
             document.querySelector(".closes").addEventListener("click", function() {
                 console.log("close btn clicked");
-                modalEl.classList.add("hide");
+                modalFoodEl.classList.add("hide");
             });
         });
 };
