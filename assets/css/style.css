@@ -22,13 +22,13 @@
     display: none;
 }
 
- html {
+html {
     height: 100%;
-  }
+}
   
- body {
-    /* The image used */
-    background-image: url("../images/cliomakeup-apericena-apericena-1.jpg");
+body {
+       /* The image used */
+    background-image: url("../images/cliomakeup-apericena-apericena-1 (2).jpg");
   
     /* Full height */
     height: 100%;
@@ -37,18 +37,19 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
     
-  }
+}
+.nav-wrapper{
+    background: rgba(255, 228, 196, 1);
+}
+.nav-wrapper a {
+    
+    color: black;
 
-.nav-wrapper {
-background-color: bisque;
-
-};
+}
 .textContent {
 
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
     color: black;
     text-align: left;
     
@@ -57,14 +58,16 @@ background-color: bisque;
     font-size: 20px;
     font-style: italic;
     font-weight: bold;
-    background-color: bisque;
-    opacity: 70%;     
+    background: rgba(255, 228, 196, .5);
+    /* background-color: bisque; */
+    /* opacity: 50%;      */
+
 }
 .b {
     text-shadow: 2px 2px 5px red;
     font-size: 40px;
-    background-color: bisque;
-    opacity: 70%;     
+    background-color: rgb(233, 216, 196);
+    opacity: 50%;     
 
 }
 .brand-logo{
