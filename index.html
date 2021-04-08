@@ -81,7 +81,19 @@
 
 
             <form id="bev-search-form" class="input-field col s6">
-                <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate">
+                <!-- <label for="liquor">Pick your poison:</label> -->
+                <select name="liquor" id="bevIngredient">
+                    <option value="" disabled selected hidden>Pick your Poison</option>
+                    <option value="rum">Rum</option>
+                    <option value="gin">Gin</option>
+                    <option value="tequila">Tequila</option>
+                    <option value="vodka">Vodka</option>
+                    <option value="whiskey">hiskey</option>
+                    <option value="champagne">Champagne</option>
+                    <option value="beer">Beer</option>
+                </select>
+                <br><br>
+                <!-- <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate"> -->
                 <button id="bev-search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <!-- <i class="material-icons right">send</i> -->
                 </button>
