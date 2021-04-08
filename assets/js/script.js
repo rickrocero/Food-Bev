@@ -7,7 +7,7 @@ var modalFoodEl = document.querySelector(".modal-container-2");
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
     var searchTerm = ingredientsTermInput.value;
-    var urlToFetch = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchTerm}&number=8&apiKey=14d9da1ef7ea4d14af97948a6903f533`
+    var urlToFetch = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchTerm}&number=12&apiKey=14d9da1ef7ea4d14af97948a6903f533`
     fetch(urlToFetch)
         .then(function (response) {
             return response.json();
@@ -60,8 +60,8 @@ const createFoodRecipe = (recipe) => {
             var title = results.title;
             var extendedIngredients = results.extendedIngredients;
             //var instructions = results.analyzedInstructions[0].steps[0].ingredients;
-            var url = results.sourceUrl;
-            var steps = results.analyzedInstructions[0].steps;
+            var url = results.sourceUrl;   
+            var steps = results.analyzedInstructions[0]?.steps||[];
             console.log(title);
             var allExtendedIngredients = []
             var allSteps = []
@@ -69,6 +69,7 @@ const createFoodRecipe = (recipe) => {
                 allExtendedIngredients.push(extendedIngredients[i].original);
                 //console.log(allExtendedIngredients[i]);
             }
+            
             for (let i = 0; i < steps.length; i++) {
                 allSteps.push(steps[i].step);
                 console.log(allSteps);
@@ -86,7 +87,7 @@ const createFoodRecipe = (recipe) => {
                           </div>
                           <h6><strong>Instructions</strong></h6>
                           <div class="instruction-container">
-                              <ul>${renderFoodRecipeData(allSteps, "instruction")}</ul>
+                              <ul>${steps.length>0?renderFoodRecipeData(allSteps, "instruction"):""}</ul>
                           </div>
                           
                           <div class="card-action">
