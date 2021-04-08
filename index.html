@@ -21,22 +21,15 @@
 </head>
 
 <body>
+
+    <div class="bg-image"></div>
+
     <div class="container">
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Protein</a></li>
-            <li><a href="#!">Veggie</a></li>
-            <li><a href="#!">Starch</a></li>
-        </ul>
+
         <nav>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">Food & Bev!</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="coktails.html">Cocktails</a></li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Ingredients<i
-                                class="fas fa-arrow-circle-down"></i></a></li>
-                </ul>
+
             </div>
         </nav>
         <div class="row">
@@ -50,11 +43,10 @@
                 <p1>
                     <div class="a">
                         Do you ever feel uninspired when looking into your fridge? Not anymore! We've got the page for
-                        you. 
+                        you.
                         <br>
                         <br>
-
-                        Enter a few items from your inventory, press enter and options appear. Pick an option and
+                        Enter a few ingredients from your inventory, press submit and options appear. Pick an option and
                         the recipe shows you what to do.
                         <br>
                         <br>
@@ -78,7 +70,7 @@
             <form id="search-form" class="input-field col s6">
                 <input id="foodIngredient" placeholder="Food Ingredient" type="search" class="validate">
                 <button id="search-button" class="btn waves-effect waves-light" type="submit" name="search">Submit
-                    <i class="material-icons right">send</i>
+                    <!-- <i class="material-icons right">send</i> -->
                 </button>
             </form>
 
@@ -86,7 +78,7 @@
             <form id="bev-search-form" class="input-field col s6">
                 <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate">
                 <button id="bev-search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
+                    <!-- <i class="material-icons right">send</i> -->
                 </button>
             </form>
         </div>
@@ -116,10 +108,11 @@
         <div class="modal-container hide">
             <!-- modal goes here -->
         </div>
+
+        <div class="modal-container-2 hide">
+            <!-- modal goes here -->
+        </div>
     </div>
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
