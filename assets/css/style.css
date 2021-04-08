@@ -3,7 +3,7 @@
     width: 300px;
 }
 
-.modal-container {
+.modal-container, .modal-container-2 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,7 +12,8 @@
     z-index: 1;
 }
 
-.modal-container .card {
+.modal-container .card,
+.modal-container-2 .card {
     margin: 30vh auto auto auto;
     width: fit-content;
     border-radius: 20px;
@@ -106,7 +107,7 @@ body {
     padding: 20px;
 } */
 
-.close:hover {
+.close:hover, .closes:hover {
     background-color: #cc0000;
     color: white;
     transition: ease-in-out ;
