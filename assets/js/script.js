@@ -77,17 +77,22 @@ const createFoodRecipe = (recipe) => {
             const cardFoodTemplate = `
                   <div class="card">
                       <div class="card-content">
+                      <button class="closes" style="position: absolute; top: 0; right: 0; border-radius: 20px;">close</button>
                       <span class="card-title">${title}</span>
-                          <div class="ingredient-container">
+                      <h6><strong>Ingredients</strong></h6>
+                          <div class="ingredient-measure-container>
+                            <div class="ingredient-container">
                               <ul>${renderFoodRecipeData(allExtendedIngredients, "ingredientList")}</ul>
                           </div>
+                          <h6><strong>Instructions</strong></h6>
                           <div class="instruction-container">
                               <ul>${renderFoodRecipeData(allSteps, "instruction")}</ul>
                           </div>
+                          
                           <div class="card-action">
-                            <a href=${url}>Recipe Link</a>
+                            <a href=${url}>Full Recipe Link</a>
                             </div>
-                          <button class="closes">close</button>
+                         </div>
                       </div>
                   </div>
               `;
