@@ -2,11 +2,7 @@ var resultContent = document.getElementById('food-root');
 var searchForm = document.querySelector("#search-form");
 var ingredientsTermInput = document.querySelector("#foodIngredient");
 //$(".dropdown-trigger").dropdown({ hover: false });
-<<<<<<< HEAD
 var modalFoodEl = document.querySelector(".modal-container-2");
-=======
-var modalEl = document.querySelector("modal-container-2");
->>>>>>> 48aab45d08a3f746f1fe91d045897dd0160e01cc
 
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
