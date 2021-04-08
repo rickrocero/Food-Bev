@@ -20,7 +20,7 @@ bevSearchForm.addEventListener("submit", function (event) {
       // console.log(data.drinks[0]);
       // console.log(data.drinks[0].idDrink);
       // loop through data then append cocktail name and img to page
-      for (var i = 0; i < data.drinks.length; i++) {
+      for (var i = 0; i < 12; i++) {
         // console.log(drinkName);
         var drinkName = data.drinks[i].strDrink;
         var drinkTitle = document.createElement("h6");
