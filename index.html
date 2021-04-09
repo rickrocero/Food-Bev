@@ -21,40 +21,39 @@
 </head>
 
 <body>
-    <div class="container">
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Protein</a></li>
-            <li><a href="#!">Veggie</a></li>
-            <li><a href="#!">Starch</a></li>
-        </ul>
+    <!-- creating header and logo -->
+    <header>
         <nav>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">Food & Bev!</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="coktails.html">Cocktails</a></li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Ingredients<i
-                                class="fas fa-arrow-circle-down"></i></a></li>
-                </ul>
+
             </div>
         </nav>
-        <div class="row">
+    </header>
+    <!-- background image -->
+    <div class="bg-image"></div>
 
-            <img class="fit-picture col s6"
+
+
+    <div class="container">
+
+
+        <div class="row">
+            <!-- problem statement image -->
+            <img class="fit-picture col s6 circle"
                 src="https://www.electricireland.ie/images/default-album/fridge-gazing-featured541eda7971b26d2c9ef6ff00003c2f58.jpg?sfvrsn=c5acb70d_0"
                 alt="Confused Chef">
 
             <div class="textContent fit picture col s6">
 
                 <p1>
+                    <!-- problem statement text -->
                     <div class="a">
                         Do you ever feel uninspired when looking into your fridge? Not anymore! We've got the page for
-                        you. 
+                        you.
                         <br>
                         <br>
-
-                        Enter a few items from your inventory, press enter and options appear. Pick an option and
+                        Enter a few ingredients from your inventory, press submit and options appear. Pick an option and
                         the recipe shows you what to do.
                         <br>
                         <br>
@@ -65,37 +64,50 @@
                         Go from uninspired to brilliant with:
                     </div>
                     <br>
-
+                    <!-- site logo-->
                     <div class="b">
-                        "Food & Bev!"
+                        Food & Bev!
                     </div>
                 </p1>
 
 
             </div>
         </div>
+        <!-- food input by user -->
         <div class="row">
             <form id="search-form" class="input-field col s6">
                 <input id="foodIngredient" placeholder="Food Ingredient" type="search" class="validate">
                 <button id="search-button" class="btn waves-effect waves-light" type="submit" name="search">Submit
-                    <i class="material-icons right">send</i>
+
                 </button>
             </form>
 
-
+            <!-- bev input from user -->
             <form id="bev-search-form" class="input-field col s6">
-                <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate">
+                <!-- <label for="liquor">Pick your poison:</label> -->
+                <select name="liquor" id="bevIngredient">
+                    <option value="" disabled selected hidden>Pick your Poison</option>
+                    <option value="rum">Rum</option>
+                    <option value="gin">Gin</option>
+                    <option value="tequila">Tequila</option>
+                    <option value="vodka">Vodka</option>
+                    <option value="whiskey">Whiskey</option>
+                    <option value="champagne">Champagne</option>
+                    <option value="beer">Beer</option>
+                </select>
+                <br><br>
+                <!-- <input placeholder="Beverage Ingredient" id="bevIngredient" type="text" class="validate"> -->
                 <button id="bev-search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
+                    <!-- <i class="material-icons right">send</i> -->
                 </button>
             </form>
         </div>
 
 
-        <main class="recipeDashboard col-9">
+        <main class="recipeDashboard">
 
             <div class="row">
-                <section id="Recipes" class="card m-5 col-12">
+                <section id="Recipes" class="card m-5 col s4 pull s4">
                     <!-- recipe data-->
                     <div class="card-body">
 
@@ -104,7 +116,7 @@
                     </div>
                 </section>
 
-                <section id="Cocktails" class="card m-5 col-12">
+                <section id="Cocktails" class="card m-5 col s4 push-s4">
                     <!-- bev data-->
                     <div id="" class="card-body">
                         <div id="bev-root"></div>
@@ -116,10 +128,11 @@
         <div class="modal-container hide">
             <!-- modal goes here -->
         </div>
+
+        <div class="modal-container-2 hide">
+            <!-- modal goes here -->
+        </div>
     </div>
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>

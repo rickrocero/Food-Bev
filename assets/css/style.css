@@ -3,7 +3,7 @@
     width: 300px;
 }
 
-.modal-container {
+.modal-container, .modal-container-2 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,27 +12,109 @@
     z-index: 1;
 }
 
-.modal-container .card {
+.modal-container .card,
+.modal-container-2 .card {
     margin: 30vh auto auto auto;
     width: fit-content;
+    border-radius: 20px;
 }
 
 .hide {
     display: none;
 }
+
+html {
+    height: 100%;
+}
+  
+body {
+       /* The background image used */
+    background-image: url("../images/cliomakeup-apericena-apericena-1 (2).jpg");
+    
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    
+}   /* header styling */
+.nav-wrapper{
+    background: rgba(255, 228, 196, 1);
+    display: flex;
+    justify-content:center;
+    align-content: center;  
+
+}
+.nav-wrapper a {
+    color: black;
+    font-size: 40px;
+    text-align: center;
+
+}
+    /* problem statement styling */
+.circle {
+    border-radius: 70px;
+}
 .textContent {
-    font-size: 25px;
+    
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
     color: black;
     text-align: left;
-     
+    border-radius: 20px;
+    
 }
+.a {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px;
+    background: rgba(255, 228, 196, .75);
+    border-radius: 20px;
+    
+
+}
+    /* logo styling */
 .b {
     text-shadow: 2px 2px 5px red;
-    font-size: 30px;
+    font-size: 40px;
+    border-radius: 20px;
+    text-align:center;
+    background: rgba(255, 228, 196, .5);
+    
 
 }
 .brand-logo{
     text-shadow: 2px 2px 5px red;
+    color: black;
 }
+#search-button {
+    background-color: rgb(98, 240, 129);
+    color: black;
+}
+#bev-search-btn {
+    background-color: rgb(98, 240, 129);
+    color: black;
+    bottom: 39px;
+}
+
+.ingredient-measure-container {
+    display: flex;
+}
+
+.ingredient-container {
+    padding-inline-end: 15px;
+}
+
+.close:hover, .closes:hover {
+    background-color: #cc0000;
+    color: white;
+    transition: ease-in-out ;
+}
+
+#bevIngredient {
+    display: block;
+}
+

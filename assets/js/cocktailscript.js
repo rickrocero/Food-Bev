@@ -4,6 +4,7 @@ var bevSearchBtn = document.querySelector("#bev-search-btn");
 var bevDivEl = document.querySelector("#bev-root");
 var bevIngred = bevIngredInput.value;
 var modalEl = document.querySelector(".modal-container");
+var bodyEl = document.querySelector("body");
 
 
 bevSearchForm.addEventListener("submit", function (event) {
@@ -16,10 +17,11 @@ bevSearchForm.addEventListener("submit", function (event) {
       return response.json();
     })
     .then(function (data) {
+      bevDivEl.innerHTML = "";
       // console.log(data.drinks[0]);
       // console.log(data.drinks[0].idDrink);
       // loop through data then append cocktail name and img to page
-      for (var i = 0; i < data.drinks.length; i++) {
+      for (var i = 0; i < 12; i++) {
         // console.log(drinkName);
         var drinkName = data.drinks[i].strDrink;
         var drinkTitle = document.createElement("h6");
@@ -85,9 +87,10 @@ const generateRecipe = (recipe) => {
 
       const cardTemplate = `
             <div class="card">
-                <div class="card-body">
-                    <button class="close">close</button>
-                    <div class="ingredient-measure-container"> 
+                <div class="card-content">
+                    <button class="close" style="position: absolute; top: 0; right: 0; border-radius: 20px;" >close</button>
+                    <h6><strong>Ingredients</strong></h6>
+                    <div class="ingredient-measure-container">
                       <div class="ingredient-container">
                           <ul>${renderRecipeData(ingredient, "ingredient")}</ul>
                       </div>
@@ -95,6 +98,7 @@ const generateRecipe = (recipe) => {
                           <ul>${renderRecipeData(measure, "measure")}</ul>
                       </div>
                     </div>
+                    <h6><strong>Instructions</strong></h6>
                     <div class="instruction-container">
                         <ul>${renderRecipeData(instruction, "instruction")}</ul>
                     </div>
