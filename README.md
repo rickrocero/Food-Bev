@@ -8,9 +8,8 @@ To access the live page you can go here:
 https://moecory11.github.io/food-bev/
 ## Usage
 When using this project you will be presented with two search input fields. One for food, which you have the option to enter up to three ingredients in. Another for liquor, which gives you a drop down tab with your alcohol options. Once you enter your selections, click submit, the title and pictures of recipes will be displayed. You then have the option to scroll though and click the "Get Recipe" button for the food and drink recipes of your choice. Once clicked it will display a recipe card with the ingredients and instructions for the food and drink items you chose. Provided in the food recipe card there is a link to the original page the recipe came from for further detailed instructions and information. Displayed in the screenshot is the results of a Food and Bev search.
-    ```md
     ![alt text](assets/images/screenshot.png)
-    ```
+
 ## Credits
 This project was a collaborative effort between the three people whos GitHub profiles links are provided here:
 https://github.com/rickrocero,
