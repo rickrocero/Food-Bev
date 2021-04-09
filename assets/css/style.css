@@ -28,7 +28,7 @@ html {
 }
   
 body {
-       /* The image used */
+       /* The background image used */
     background-image: url("../images/cliomakeup-apericena-apericena-1 (2).jpg");
     
   
@@ -40,7 +40,7 @@ body {
     /* background-repeat: no-repeat; */
     background-size: cover;
     
-}
+}   /* header styling */
 .nav-wrapper{
     background: rgba(255, 228, 196, 1);
     display: flex;
@@ -54,7 +54,7 @@ body {
     text-align: center;
 
 }
-
+    /* problem statement styling */
 .circle {
     border-radius: 70px;
 }
@@ -73,18 +73,17 @@ body {
     padding: 5px;
     background: rgba(255, 228, 196, .75);
     border-radius: 20px;
-    /* background-color: bisque; */
-    /* opacity: 50%;      */
+    
 
 }
+    /* logo styling */
 .b {
     text-shadow: 2px 2px 5px red;
     font-size: 40px;
     border-radius: 20px;
     text-align:center;
     background: rgba(255, 228, 196, .5);
-    /* background-color: rgb(233, 216, 196);
-    opacity: 50%;      */
+    
 
 }
 .brand-logo{
@@ -108,10 +107,6 @@ body {
 .ingredient-container {
     padding-inline-end: 15px;
 }
-
-/* .cocktail-card-body {
-    padding: 20px;
-} */
 
 .close:hover, .closes:hover {
     background-color: #cc0000;
