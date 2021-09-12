@@ -16,15 +16,26 @@ You will be presented with two search input fields:
 * one for food ingredients, which you have the option to enter up to three ingredients separated by a comma. 
 * another for liquor, which gives you a drop-down menu with your alcohol options. 
 
-Once you enter your selections, click Submit. 
+Once you enter your selections, click Submit.
 
-Scroll through the list and when you see something tasty click the "Get Recipe" button for the food and drink recipes of your choice. You'll be presented with a recipe card with a full list of ingredients and instructions. Provided in the food recipe card there is a link to the original page the recipe came from for further detailed instructions and information.
+### Submit screen
+![](assets/images/preview1.png)
+
+Scroll through the list and when you see something tasty click the "Get Recipe" button for the food and drink recipes of your choice. 
+
+### Food recipe card
+You'll be presented with a recipe card with a full list of ingredients and instructions. Provided in the food recipe card there is a link to the original page the recipe came from for further detailed instructions and information.
+![](assets/images/preview2.png)
+
+### Cocktail recipe card
+![](assets/images/preview3.png)
 
 ## Technologies
- ![spoonacular logo](https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg)  
+![spoonacular logo](https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg)  
 [spoonacular API](https://spoonacular.com/food-api)
  
-![logo](https://www.thecocktaildb.com/images/logo.png)					
+![logo](https://www.thecocktaildb.com/images/logo.png)
+					
 [TheCocktailDB API](https://www.thecocktaildb.com/)
 
 
