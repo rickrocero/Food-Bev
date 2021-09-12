@@ -7,6 +7,7 @@
 4. [Authors](#authors)
 5. [Contributing](#contributing)
 6. [License](#license)
+7. [Questions](#questions)
 
 ## Description
 Food & Bev is a website that offers a solution to the mismatched ingredients you already have in your kitchen. Discover easy recipes as well as creative cocktails you can make from the liquor in your bar. Food & Bev makes planning your meals with corresponding cocktails a simple and convenient process. 
