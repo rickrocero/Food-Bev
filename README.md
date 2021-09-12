@@ -35,7 +35,7 @@ You'll be presented with a recipe card with a full list of ingredients and instr
 [spoonacular API](https://spoonacular.com/food-api)
  
 ![logo](https://www.thecocktaildb.com/images/logo.png)
-					
+
 [TheCocktailDB API](https://www.thecocktaildb.com/)
 
 
@@ -46,9 +46,9 @@ You'll be presented with a recipe card with a full list of ingredients and instr
 ## Authors
 | Name | GitHub  | LinkedIn |
 | :--: | :-----: | :------: |
-| Gene Garnes | [![GitHub](./Assets/images/github.png)](https://github.com/Gene16422) | [![LinkedIn](./Assets/images/linkedin.png)](https://linkedin.com/in/gene-garnes-9270631/) |
-| Corey Moe | [![GitHub](./Assets/images/github.png)](https://github.com/moecory11) | [![LinkedIn](./Assets/images/linkedin.png)](https://linkedin.com/in/cory-moe-66530848/) |
-| Rick Rocero | [![GitHub](./Assets/images/github.png)](https://github.com/rickrocero) | [![LinkedIn](./Assets/images/linkedin.png)](https://linkedin.com/in/rick-rocero/) |
+| Gene Garnes | [![GitHub](./assets/images/github.png)](https://github.com/Gene16422) | [![LinkedIn](./assets/images/linkedin.png)](https://linkedin.com/in/gene-garnes-9270631/) |
+| Corey Moe | [![GitHub](./assets/images/github.png)](https://github.com/moecory11) | [![LinkedIn](./assets/images/linkedin.png)](https://linkedin.com/in/cory-moe-66530848/) |
+| Rick Rocero | [![GitHub](./assets/images/github.png)](https://github.com/rickrocero) | [![LinkedIn](./assets/images/linkedin.png)](https://linkedin.com/in/rick-rocero/) |
 
 ## Contributing
 Fork the git repository then contact the repository owner about pull requests. 
