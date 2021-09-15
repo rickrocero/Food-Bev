@@ -2,15 +2,19 @@
 
 ## Table of Contents
 1. [Description](#description)
-2. [Usage](#usage)
-3. [Technologies](#technologies)
-4. [Authors](#authors)
-5. [Contributing](#contributing)
-6. [License](#license)
-7. [Questions](#questions)
+2. [Link](#link)
+3. [Usage](#usage)
+4. [Technologies](#technologies)
+5. [Authors](#authors)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Questions](#questions)
 
 ## Description
 Food & Bev is a website that offers a solution to the mismatched ingredients you already have in your kitchen. Discover easy recipes as well as creative cocktails you can make from the liquor in your bar. Food & Bev makes planning your meals with corresponding cocktails a simple and convenient process. 
+
+## Link
+https://rickrocero.github.io/Food-Bev/
 
 ## Usage
 You will be presented with two search input fields: 
